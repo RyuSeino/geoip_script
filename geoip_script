@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# = 0 ] ; then
+  ip=''
+else
+  ip=$1
+fi
+
+curl http://ip-api.com/json/$ip?fields=country,regioName,city,isp,org,reverse,mobile,proxy 2> /dev/null | jq
+
